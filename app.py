@@ -13,6 +13,179 @@ from openai import OpenAI
 
 st.set_page_config(page_title="Windpark Lindenberg Assistant", page_icon="🌱")
 
+# Modern Glassmorphism Styling
+st.markdown("""
+<style>
+    /* Hide Streamlit branding and menu */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    .stDeployButton {display:none;}
+    
+    /* Modern background */
+    .stApp {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background-attachment: fixed;
+    }
+    
+    /* Glassmorphism containers */
+    .main .block-container {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 2rem;
+        margin-top: 2rem;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Chat messages styling */
+    .stChatMessage {
+        background: rgba(255, 255, 255, 0.15) !important;
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        margin: 1rem 0;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* User messages */
+    .stChatMessage[data-testid="user-message"] {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        color: white;
+        margin-left: 20%;
+    }
+    
+    /* Assistant messages */
+    .stChatMessage[data-testid="assistant-message"] {
+        background: rgba(255, 255, 255, 0.9) !important;
+        color: #333;
+        margin-right: 20%;
+    }
+    
+    /* Input styling */
+    .stChatInput > div {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .stChatInput input {
+        background: transparent !important;
+        color: white !important;
+        border: none !important;
+    }
+    
+    .stChatInput input::placeholder {
+        color: rgba(255, 255, 255, 0.7) !important;
+    }
+    
+    /* Buttons */
+    .stButton > button {
+        background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+        color: white;
+        border: none;
+        border-radius: 25px;
+        padding: 0.75rem 2rem;
+        font-weight: 600;
+        box-shadow: 0 8px 25px rgba(238, 90, 36, 0.3);
+        transition: all 0.3s ease;
+        transform: translateY(0);
+    }
+    
+    .stButton > button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 35px rgba(238, 90, 36, 0.4);
+    }
+    
+    /* Pills/suggestions */
+    .stSelectbox > div > div {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    /* Animated title */
+    .chat-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        color: white;
+        margin-bottom: 2rem;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        animation: glow 3s ease-in-out infinite alternate;
+    }
+    
+    @keyframes glow {
+        from { text-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+        to { text-shadow: 0 0 30px rgba(255, 255, 255, 0.8); }
+    }
+    
+    /* Loading spinner */
+    .stSpinner > div {
+        border-top-color: #ff6b6b !important;
+    }
+    
+    /* Success/info messages */
+    .stAlert {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+    }
+    
+    /* Floating particles */
+    .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+    }
+    
+    .particle {
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 50%;
+        animation: float 8s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+        0%, 100% { 
+            transform: translateY(0px) translateX(0px) rotate(0deg);
+            opacity: 1;
+        }
+        33% { 
+            transform: translateY(-30px) translateX(30px) rotate(120deg);
+            opacity: 0.8;
+        }
+        66% { 
+            transform: translateY(-60px) translateX(-20px) rotate(240deg);
+            opacity: 0.6;
+        }
+    }
+</style>
+
+<!-- Floating particles background -->
+<div class="particles">
+    <div class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
+    <div class="particle" style="left: 20%; top: 80%; animation-delay: 1s;"></div>
+    <div class="particle" style="left: 30%; top: 40%; animation-delay: 2s;"></div>
+    <div class="particle" style="left: 40%; top: 70%; animation-delay: 3s;"></div>
+    <div class="particle" style="left: 50%; top: 10%; animation-delay: 4s;"></div>
+    <div class="particle" style="left: 60%; top: 90%; animation-delay: 5s;"></div>
+    <div class="particle" style="left: 70%; top: 30%; animation-delay: 6s;"></div>
+    <div class="particle" style="left: 80%; top: 60%; animation-delay: 1.5s;"></div>
+    <div class="particle" style="left: 90%; top: 50%; animation-delay: 2.5s;"></div>
+</div>
+""", unsafe_allow_html=True)
 # Configuration
 MODEL = "gpt-4o-mini"
 HISTORY_LENGTH = 5
