@@ -403,7 +403,7 @@ st.markdown("""
     
     /* Buttons */
     .stButton > button {
-        background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+        background: linear-gradient(45deg, #d9ece9, 000000);
         color: white;
         border: none;
         border-radius: 25px;
