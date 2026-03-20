@@ -291,13 +291,47 @@ def get_response(prompt):
     except Exception as e:
         yield f"Fehler bei der Antwortgenerierung: {str(e)}"
 
-@st.dialog("Rechtlicher Hinweis")
+@st.dialog("Datenschutz & Nutzung")
 def show_disclaimer_dialog():
-    st.caption("""
-            Dieser AI-Chatbot stellt Informationen über das Windpark Lindenberg Projekt bereit.
-            Die Antworten basieren ausschließlich auf dem offiziellen Planungsbericht.
-            Antworten können unvollständig oder ungenau sein. Es wird keine Rechtsberatung gegeben.
-        """)
+    st.markdown("""
+    🤖 **Über diesen KI-Assistenten**
+
+    Dies ist ein KI-gestütztes Reflexionswerkzeug, das Ihnen hilft, Ihre Gedanken zum Windpark Lindenberg zu erkunden. Bitte beachten Sie:
+
+    **Was dieses Tool tut:**
+    • Stellt Informationen ausschließlich aus offiziellen Projektdokumenten bereit
+    • Hilft Ihnen, über Ihre eigenen Werte und Bedenken zu reflektieren
+    • Bietet verschiedene Perspektiven zur Betrachtung
+    • Bereitet Sie auf die Teilnahme an offiziellen Prozessen vor
+
+    **Was dieses Tool NICHT tut:**
+    • Offizielle Konsultationsprozesse oder rechtliche Verfahren ersetzen
+    • Rechts-, Finanz- oder professionelle Beratung bieten
+    • Eine offizielle Position oder Organisation vertreten
+    • Genauigkeit aller Interpretationen garantieren
+
+    **Wichtige Einschränkungen:**
+    • Informationen beschränken sich nur auf das Projekt
+    • KI-Antworten können Fehler oder Fehlinterpretationen enthalten
+    • Dieses Tool kann nicht alle Fragen zum Projekt beantworten
+    • Technische oder rechtliche Fragen erfordern Expertenberatung
+
+    **Datenschutz und Verarbeitung:**
+    • Ihre Nachrichten werden zur Antwortgenerierung an OpenAI übertragen
+    • OpenAI verarbeitet Ihre Daten gemäß deren Datenschutzrichtlinien
+    • Keine persönlichen Daten werden dauerhaft in diesem System gespeichert
+    • Vermeiden Sie die Eingabe sensibler persönlicher Informationen
+    • Die Nutzung erfolgt auf eigene Verantwortung
+
+    **Ihre Teilnahme:**
+    • Die Nutzung dieses Tools ist völlig freiwillig und anonym
+    • Sie können das Gespräch jederzeit beenden
+    • Ihre Antworten werden im Rahmen dieses Projekts nicht aufgezeichnet oder geteilt
+   
+    **Für offizielle Informationen:** Kontaktieren Sie die Projektleitung oder besuchen Sie die offizielle Website
+
+    Durch Fortfahren bestätigen Sie das Verständnis dieser Einschränkungen.
+    """)
 
 # UI
 st.html(div(style=styles(font_size=rem(5), line_height=1))["🌱"])
