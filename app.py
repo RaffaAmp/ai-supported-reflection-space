@@ -363,12 +363,13 @@ if not user_first_interaction and not has_message_history:
             options=SUGGESTIONS.keys(),
             key="selected_suggestion",
         )
-
+ 
     st.button(
-        "&nbsp;:small[:gray[:material/balance: Rechtlicher Hinweis]]",
-        type="tertiary",
-        on_click=show_disclaimer_dialog,
+    "&nbsp;:small[:gray[:material/info: Über diesen KI-Assistenten]]",
+    type="tertiary",
+    on_click=show_disclaimer_dialog,
     )
+    
     st.stop()
 
 user_message = st.chat_input("Stellen Sie eine Nachfrage...")
