@@ -559,7 +559,7 @@ if not user_first_interaction and not has_message_history:
 
 # Always display chat messages
 for i, message in enumerate(st.session_state.messages):
-    avatar = "🧑🏽" if message["role"] == "assistant" else None
+    avatar = "https://raw.githubusercontent.com/RaffaAmp/ai-supported-reflection-space/refs/heads/main/Avatar.png" message["role"] == "assistant" else None
     with st.chat_message(message["role"], avatar=avatar):
         st.markdown(message["content"])
 
@@ -606,7 +606,7 @@ if user_message:
     with st.chat_message("user"):
         st.markdown(user_message)
 
-    with st.chat_message("assistant", avatar="🧑🏽"):
+    with st.chat_message("assistant", avatar="https://raw.githubusercontent.com/RaffaAmp/ai-supported-reflection-space/refs/heads/main/Avatar.png"):
         with st.spinner("Warten..."):
             question_timestamp = datetime.datetime.now()
             time_diff = question_timestamp - st.session_state.prev_question_timestamp
