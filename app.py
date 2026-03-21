@@ -536,8 +536,6 @@ if not user_first_interaction and not has_message_history:
 for i, message in enumerate(st.session_state.messages):
     avatar = "🧑🏽" if message["role"] == "assistant" else None
     with st.chat_message(message["role"], avatar=avatar):
-        if message["role"] == "assistant":
-            st.container()
         st.markdown(message["content"])
 
 # Show input and suggestions only if no interaction yet
@@ -576,13 +574,6 @@ with title_row:
 
 if "prev_question_timestamp" not in st.session_state:
     st.session_state.prev_question_timestamp = datetime.datetime.fromtimestamp(0)
-
-# Display chat messages
-for i, message in enumerate(st.session_state.messages):
-    with st.chat_message(message["role"]):
-        if message["role"] == "assistant":
-            st.container()
-        st.markdown(message["content"])
 
 if user_message:
     user_message = user_message.replace("$", r"\$")
