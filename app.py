@@ -385,21 +385,28 @@ st.markdown("""
     
     /* Input styling */
     .stChatInput > div {
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        border-radius: 25px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-    
-    .stChatInput input {
-        background: transparent !important;
-        color: white !important;
-        border: none !important;
-    }
-    
-    .stChatInput input::placeholder {
-        color: rgba(255, 255, 255, 0.7) !important;
-    }
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.stChatInput input {
+    background: transparent !important;
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.stChatInput input:focus {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.stChatInput input::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
     
     /* Buttons */
     .stButton > button {
