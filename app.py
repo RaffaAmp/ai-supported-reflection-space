@@ -404,7 +404,7 @@ st.markdown("""
     /* Buttons */
     .stButton > button {
     background: #d9ece9;
-    color: black !important;
+    color: white !important;
     border: none;
     border-radius: 25px;
     padding: 0.75rem 2rem;
@@ -416,7 +416,7 @@ st.markdown("""
 
 .stButton > button:hover {
     background: #d9ece9 !important;
-    color: black !important;
+    color: white !important;
     transform: translateY(-3px);
     box-shadow: 0 12px 35px rgba(238, 90, 36, 0.4);
 }
