@@ -699,9 +699,6 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-    
-</style>
-""", unsafe_allow_html=True)
 
 st.html(div(style=styles(font_size=rem(5), line_height=1))["🌱"])
 
