@@ -386,7 +386,7 @@ st.markdown("""
 .stChatInput > div {
     background: white !important;
     border-radius: 25px;
-    border: 1px solid black !important;
+    border: 1px solid #ccc !important;
     box-shadow: none !important;
 }
 
