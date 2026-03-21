@@ -600,9 +600,22 @@ st.markdown("""
     background: transparent !important;
     }
 
-    /* Force override all possible dark backgrounds */
-    * {
-    background-color: transparent !important;
+    /* Target specific Streamlit containers that turn black */
+    .stApp > div:not(.main) {
+        background: transparent !important;
+    }
+
+    .stApp section {
+        background: transparent !important;
+    }
+
+    .stApp > div[data-testid="stAppViewContainer"] section {
+        background: transparent !important;
+    }
+    
+    /* Target any container that might have dark background */
+    div[class*="stApp"] > div:not([class*="main"]) {
+        background: transparent !important;
     }
 
     /* But keep the specific elements we want white */
