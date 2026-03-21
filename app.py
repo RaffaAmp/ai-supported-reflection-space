@@ -403,21 +403,23 @@ st.markdown("""
     
     /* Buttons */
     .stButton > button {
-        background: linear-gradient(45deg, #d9ece9, #000000);
-        color: white;
-        border: none;
-        border-radius: 25px;
-        padding: 0.75rem 2rem;
-        font-weight: 600;
-        box-shadow: 0 8px 25px rgba(238, 90, 36, 0.3);
-        transition: all 0.3s ease;
-        transform: translateY(0);
-    }
-    
-    .stButton > button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 35px rgba(238, 90, 36, 0.4);
-    }
+    background: #d9ece9;
+    color: white !important;
+    border: none;
+    border-radius: 25px;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    box-shadow: 0 8px 25px rgba(238, 90, 36, 0.3);
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.stButton > button:hover {
+    background: #d9ece9 !important;
+    color: white !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(238, 90, 36, 0.4);
+}
     
     /* Pills/suggestions */
     .stSelectbox > div > div {
