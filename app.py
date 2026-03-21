@@ -600,21 +600,28 @@ st.markdown("""
     background: transparent !important;
     }
 
-    /* Target specific Streamlit containers that turn black */
-    .stApp > div:not(.main) {
+    /* Target the specific chat input container that appears during chat */
+    .stApp > div[data-testid="stAppViewContainer"] > div:last-child,
+    .stApp > div[data-testid="stAppViewContainer"] > section:last-child,
+    .stApp section[data-testid="stChatInput"],
+    .stApp > div > section:last-of-type,
+    .stApp > div > div > section:last-child {
         background: transparent !important;
     }
 
-    .stApp section {
+    /* Force any bottom sections to be transparent */
+    .stApp section:last-child,
+    .stApp section:last-of-type {
         background: transparent !important;
     }
 
-    .stApp > div[data-testid="stAppViewContainer"] section {
+    /* Target any section containing chat elements */
+    section:has([data-testid="stChatInput"]) {
         background: transparent !important;
     }
-    
-    /* Target any container that might have dark background */
-    div[class*="stApp"] > div:not([class*="main"]) {
+
+    /* Fallback for any remaining dark backgrounds */
+    .stApp [style*="background"] {
         background: transparent !important;
     }
 
