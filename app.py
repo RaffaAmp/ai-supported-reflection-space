@@ -213,23 +213,48 @@ def load_lindenberg_knowledge_base():
         ]
 
 def improved_search(query, documents, max_results=3):
-    """Search function with scoring"""
+    """Enhanced search function with better matching"""
     if not documents:
         return []
         
-    query_words = query.lower().split()
+    query_lower = query.lower()
+    query_words = query_lower.split()
     scored_docs = []
     
     for doc in documents:
         content_lower = doc["content"].lower()
         score = 0
         
-        for word in query_words:
-            if word in content_lower:
-                score += content_lower.count(word)
+        # Exact phrase match (highest score)
+        if query_lower in content_lower:
+            score += 20
         
-        if query.lower() in content_lower:
-            score += 5
+        # Word matches
+        for word in query_words:
+            if len(word) > 2:  # Skip very short words
+                if word in content_lower:
+                    score += content_lower.count(word) * 2
+        
+        # Partial word matches (for German compound words)
+        for word in query_words:
+            if len(word) > 3:
+                for content_word in content_lower.split():
+                    if word in content_word or content_word in word:
+                        score += 1
+        
+        # Keyword matching for common topics
+        keywords = {
+            'umwelt': ['umwelt', 'natur', 'ökologie', 'lebensraum'],
+            'lärm': ['lärm', 'schall', 'geräusch', 'dezibel'],
+            'energie': ['energie', 'strom', 'leistung', 'kwh', 'mw'],
+            'bau': ['bau', 'errichtung', 'konstruktion', 'montage'],
+            'kosten': ['kosten', 'preis', 'finanzierung', 'investition']
+        }
+        
+        for topic, related_words in keywords.items():
+            if any(kw in query_lower for kw in related_words):
+                if any(kw in content_lower for kw in related_words):
+                    score += 5
             
         if score > 0:
             scored_docs.append((score, doc))
