@@ -382,7 +382,33 @@ st.markdown("""
         color: #333;
         margin-right: 20%;
     }
-    
+
+    # Attempt to change avatar Backgorund Color
+    /* Chat message avatar styling */
+.stChatMessage [data-testid="chatAvatarIcon-assistant"] {
+    background-color: #99aebb !important;
+    border-radius: 50% !important;
+}
+
+/* Alternative targeting for assistant avatars */
+.stChatMessage[data-testid="assistant-message"] [data-testid="chatAvatarIcon"] {
+    background-color: #99aebb !important;
+    border-radius: 50% !important;
+}
+
+/* More specific targeting */
+div[data-testid="stChatMessage"] div[data-testid="chatAvatarIcon"] {
+    background-color: #99aebb !important;
+    border-radius: 50% !important;
+}
+
+/* Target avatar containers */
+.stChatMessage .stAvatar {
+    background-color: #99aebb !important;
+    border-radius: 50% !important;
+}
+ #attempt done
+ 
     /* Input styling */
 .stChatInput > div {
     background: rgba(255, 255, 255, 0.2);
