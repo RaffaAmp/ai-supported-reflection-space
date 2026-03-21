@@ -695,7 +695,32 @@ st.markdown("""
         background: transparent !important;
     }
 
-    
+    /* Fix textarea placeholder text color */
+    .stChatInput textarea::placeholder {
+        color: rgba(0, 0, 0, 0.5) !important;
+        text-shadow: none !important;
+        opacity: 1 !important;
+    }
+
+    .stChatInput textarea::-webkit-input-placeholder {
+        color: rgba(0, 0, 0, 0.5) !important;
+        opacity: 1 !important;
+    }
+
+    .stChatInput textarea::-moz-placeholder {
+        color: rgba(0, 0, 0, 0.5) !important;
+        opacity: 1 !important;
+    }
+
+    .stChatInput textarea:-ms-input-placeholder {
+        color: rgba(0, 0, 0, 0.5) !important;
+        opacity: 1 !important;
+    }
+
+    /* Also target the textarea text color when typing */
+    .stChatInput textarea {
+        color: #333 !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 
