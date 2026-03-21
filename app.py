@@ -502,6 +502,33 @@ st.markdown("""
         from { text-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
         to { text-shadow: 0 0 30px rgba(255, 255, 255, 0.8); }
     }
+    
+    /* Force text color in chat messages */
+    .stChatMessage .stMarkdown p {
+        color: #333 !important;
+    }
+    
+    .stChatMessage div[data-testid="stMarkdownContainer"] p {
+        color: #333 !important;
+    }
+    
+    .stChatMessage div[data-testid="stMarkdownContainer"] {
+        color: #333 !important;
+    }
+    
+    /* Force input text color more specifically */
+    .stChatInput input[type="text"] {
+        color: #333 !important;
+    }
+    
+    .stChatInput textarea {
+        color: #333 !important;
+    }
+    
+    /* Override any Streamlit default text colors */
+    .stChatMessage * {
+        color: #333 !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 
