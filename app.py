@@ -756,8 +756,8 @@ for i, message in enumerate(st.session_state.messages):
         role_name = "assistant"
         avatar = "https://raw.githubusercontent.com/RaffaAmp/ai-supported-reflection-space/refs/heads/main/Avatar.png"
     else:
-        role_name = "person"
-        avatar = None
+        role_name = "user"
+        avatar = "https://raw.githubusercontent.com/RaffaAmp/ai-supported-reflection-space/refs/heads/main/Avatar_User.png"
     
     with st.chat_message(role_name, avatar=avatar):
         st.markdown(message["content"])
@@ -802,7 +802,7 @@ if "prev_question_timestamp" not in st.session_state:
 if user_message:
     user_message = user_message.replace("$", r"\$")
 
-    with st.chat_message("person"):  # Use same custom name
+    with st.chat_message("user", avatar="https://raw.githubusercontent.com/RaffaAmp/ai-supported-reflection-space/refs/heads/main/Avatar_User.png"):
         st.markdown(user_message)
 
     with st.chat_message("assistant", avatar="https://raw.githubusercontent.com/RaffaAmp/ai-supported-reflection-space/refs/heads/main/Avatar.png"):
