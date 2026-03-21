@@ -604,6 +604,31 @@ st.markdown("""
     .stApp > div > div > div:last-child {
     background: transparent !important;
     }
+
+    /* Force override all possible dark backgrounds */
+    * {
+    background-color: transparent !important;
+    }
+
+    /* But keep the specific elements we want white */
+    .stChatMessage {
+    background: white !important;
+    }
+
+    .stChatInput > div {
+    background: white !important;
+    }
+
+    .main .block-container {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(20px) !important;
+    }
+
+    /* Keep the main app gradient */
+    .stApp {
+    background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%) !important;
+    background-attachment: fixed !important;
+    }
     
 </style>
 """, unsafe_allow_html=True)
