@@ -569,6 +569,42 @@ st.markdown("""
     .stApp > div:last-of-type {
         background: transparent !important;
     }
+
+    /* Target the dynamic chat input container that appears during chat */
+    .stApp > div[data-testid="stAppViewContainer"] > div > div:last-child {
+    background: transparent !important;
+    }
+
+    /* Target the bottom chat area specifically */
+    .stApp > div[data-testid="stAppViewContainer"] > div:last-of-type {
+    background: transparent !important;
+    }
+
+    /* Force the chat input section background */
+    section[data-testid="stChatInput"] {
+    background: transparent !important;
+    }
+
+    /* Target any section containing chat input */
+    section:has(.stChatInput) {
+    background: transparent !important;
+    }
+
+    /* More specific targeting for the chat input area */
+    div:has(> .stChatInput) {
+    background: transparent !important;
+    }
+
+    /* Target the entire bottom section */
+    .stApp section:last-of-type {
+    background: transparent !important;
+    }
+
+    /* Override any dark backgrounds in the bottom area */
+    .stApp > div > div > div:last-child {
+    background: transparent !important;
+    }
+    
 </style>
 """, unsafe_allow_html=True)
 
