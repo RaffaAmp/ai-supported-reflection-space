@@ -666,7 +666,38 @@ st.markdown("""
     .stChatInput input:-ms-input-placeholder {
         color: rgba(0, 0, 0, 0.5) !important;
         opacity: 1 !important;
+    
     }
+
+    /* Target the specific bottom container causing black background */
+    .stBottom {
+        background: transparent !important;
+    }
+
+    .st-emotion-cache-1p2n2i4 {
+        background: transparent !important;
+    }
+
+    div[data-testid="stBottom"] {
+        background: transparent !important;
+    }
+
+    /* Target the nested containers */
+    .st-emotion-cache-hzygls {
+        background: transparent !important;
+    }
+
+    div[data-testid="stBottomBlockContainer"] {
+        background: transparent !important;
+    }
+
+    .st-emotion-cache-6shykm {
+        background: transparent !important;
+    }
+
+    
+</style>
+""", unsafe_allow_html=True)
 
     
 </style>
