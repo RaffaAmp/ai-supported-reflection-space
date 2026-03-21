@@ -530,6 +530,7 @@ if not user_first_interaction and not has_message_history:
         {"role": "assistant", "content": "Hallo! 👋 Ich bin ein Informationsassistent für das Windpark Lindenberg Projekt in Beinwil.\n\nSie können mich fragen, was Sie über das Projekt wissen möchten, oder einfach Ihre Gedanken und Sorgen teilen. Ich arbeite nur mit den offiziellen Projektdokumenten und helfe Ihnen dabei, verschiedene Aspekte zu durchdenken.\n\nIch bin neutral - mein Ziel ist es, dass Sie sich besser informiert und vorbereitet fühlen, nicht dass Sie Ihre Meinung ändern. Die Nutzung ist anonym und freiwillig. 🔒\n\nWas geht Ihnen durch den Kopf, wenn Sie an das Windpark-Projekt denken?"}
     ]
 
+if not user_first_interaction and not has_message_history:
     with st.container():
         st.chat_input("Stellen Sie eine Frage...", key="initial_question")
         selected_suggestion = st.pills(
