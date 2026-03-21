@@ -563,11 +563,11 @@ for i, message in enumerate(st.session_state.messages):
         role_name = "assistant"
         avatar = "https://raw.githubusercontent.com/RaffaAmp/ai-supported-reflection-space/refs/heads/main/Avatar.png"
     else:
-        role_name = "person" # Use a custom name to avoid default user icon
+        role_name = "person"
         avatar = None
-
-with st.chat_message(role_name, avatar=avatar):
-    st.markdown(message["content"])
+    
+    with st.chat_message(role_name, avatar=avatar):
+        st.markdown(message["content"])
         
 # Show input and suggestions only if no interaction yet
 if not user_first_interaction and not has_message_history:
@@ -637,5 +637,5 @@ if user_message:
 
         with st.container():
             response = st.write_stream(response_gen)
-            st.session_state.messages.append({"role": "user", "content": user_message})
+            st.session_state.messages.append({"role": "person", "content": user_message})
             st.session_state.messages.append({"role": "assistant", "content": response})
