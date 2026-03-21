@@ -525,11 +525,21 @@ user_just_clicked_suggestion = (
 user_first_interaction = user_just_asked_initial_question or user_just_clicked_suggestion
 has_message_history = "messages" in st.session_state and len(st.session_state.messages) > 0
 
+
+# Initialize messages with greeting if first time
 if not user_first_interaction and not has_message_history:
     st.session_state.messages = [
         {"role": "assistant", "content": "Hallo! 👋 Ich bin ein Informationsassistent für das Windpark Lindenberg Projekt in Beinwil.\n\nSie können mich fragen, was Sie über das Projekt wissen möchten, oder einfach Ihre Gedanken und Sorgen teilen. Ich arbeite nur mit den offiziellen Projektdokumenten und helfe Ihnen dabei, verschiedene Aspekte zu durchdenken.\n\nIch bin neutral - mein Ziel ist es, dass Sie sich besser informiert und vorbereitet fühlen, nicht dass Sie Ihre Meinung ändern. Die Nutzung ist anonym und freiwillig. 🔒\n\nWas geht Ihnen durch den Kopf, wenn Sie an das Windpark-Projekt denken?"}
     ]
 
+# Always display chat messages
+for i, message in enumerate(st.session_state.messages):
+    with st.chat_message(message["role"]):
+        if message["role"] == "assistant":
+            st.container()
+        st.markdown(message["content"])
+
+# Show input and suggestions only if no interaction yet
 if not user_first_interaction and not has_message_history:
     with st.container():
         st.chat_input("Stellen Sie eine Frage...", key="initial_question")
@@ -547,7 +557,6 @@ if not user_first_interaction and not has_message_history:
     )
     
     st.stop()
-
 user_message = st.chat_input("Stellen Sie eine Nachfrage...")
 
 if not user_message:
