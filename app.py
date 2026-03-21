@@ -419,11 +419,6 @@ st.markdown("""
     background: transparent !important; /* Added */
 }
 
-.stChatInput input::placeholder {
-    color: rgba(0, 0, 0, 0.5) !important;
-    text-shadow: none !important;
-}
-
 /* Additional targeting for Streamlit's chat input container */
 .stChatInput [data-testid="stChatInput"] {
     border: 1px solid rgba(255, 255, 255, 0.3) !important;
@@ -629,6 +624,30 @@ st.markdown("""
     background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%) !important;
     background-attachment: fixed !important;
     }
+
+    /* Fix placeholder text color - must come after the * override */
+    .stChatInput input::placeholder {
+        color: rgba(0, 0, 0, 0.5) !important;
+        text-shadow: none !important;
+        opacity: 1 !important;
+    }
+
+    /* Ensure all browser compatibility */
+    .stChatInput input::-webkit-input-placeholder {
+        color: rgba(0, 0, 0, 0.5) !important;
+        opacity: 1 !important;
+    }
+
+    .stChatInput input::-moz-placeholder {
+        color: rgba(0, 0, 0, 0.5) !important;
+        opacity: 1 !important;
+    }
+
+    .stChatInput input:-ms-input-placeholder {
+        color: rgba(0, 0, 0, 0.5) !important;
+        opacity: 1 !important;
+    }
+
     
 </style>
 """, unsafe_allow_html=True)
