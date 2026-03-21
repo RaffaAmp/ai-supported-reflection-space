@@ -529,6 +529,32 @@ st.markdown("""
     .stChatMessage * {
         color: #333 !important;
     }
+    
+    /* Fix chat input background to match gradient */
+    .stChatInput {
+        background: transparent !important;
+    }
+    
+    /* Make the bottom area transparent */
+    .stBottom {
+        background: transparent !important;
+    }
+    
+    /* Target the main chat input container */
+    div[data-testid="stChatInput"] {
+        background: transparent !important;
+    }
+    
+    /* Make sure the entire bottom section is transparent */
+    .stApp > div:last-child {
+        background: transparent !important;
+    }
+    
+    /* Target the specific bottom container */
+    .stApp .stChatInput {
+        background: transparent !important;
+        backdrop-filter: none !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 
