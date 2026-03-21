@@ -389,7 +389,7 @@ st.markdown("""
     backdrop-filter: blur(10px);
     border-radius: 25px;
     border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    box-shadow: none !important; /* Added */
+    box-shadow: none !important;
 }
 
 .stChatInput > div:focus-within {
@@ -404,30 +404,45 @@ st.markdown("""
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
-    text-shadow: none !important; /* Added */
+    text-shadow: none !important;
+    -webkit-box-shadow: none !important; /* Added */
+    -moz-box-shadow: none !important; /* Added */
 }
 
 .stChatInput input:focus {
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
+    -webkit-box-shadow: none !important; /* Added */
+    -moz-box-shadow: none !important; /* Added */
 }
 
 .stChatInput input::placeholder {
     color: rgba(255, 255, 255, 0.7) !important;
-    text-shadow: none !important; /* Added */
+    text-shadow: none !important;
 }
 
 /* Additional targeting for Streamlit's chat input container */
 .stChatInput [data-testid="stChatInput"] {
     border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    box-shadow: none !important; /* Added */
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important; /* Added */
+    -moz-box-shadow: none !important; /* Added */
 }
 
 .stChatInput [data-testid="stChatInput"]:focus-within {
     border: 1px solid rgba(255, 255, 255, 0.3) !important;
     outline: none !important;
     box-shadow: none !important;
+    -webkit-box-shadow: none !important; /* Added */
+    -moz-box-shadow: none !important; /* Added */
+}
+
+/* Target any nested input elements that might have shadows */
+.stChatInput * {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
 }
     
     /* Buttons */
