@@ -721,6 +721,32 @@ st.markdown("""
     .stChatInput textarea {
         color: #333 !important;
     }
+
+    /* Make chat input scroll with content instead of staying fixed */
+    .stChatInput {
+        position: relative !important;
+        bottom: auto !important;
+    }
+
+    /* Target the bottom container */
+    .stBottom {
+        position: relative !important;
+        bottom: auto !important;
+    }
+
+    /* Remove fixed positioning from chat input area */
+    div[data-testid="stBottom"] {
+        position: relative !important;
+        bottom: auto !important;
+    }
+
+    /* Ensure the input scrolls with the page */
+    .st-emotion-cache-1p2n2i4 {
+        position: relative !important;
+        bottom: auto !important;
+    }
+
+    
 </style>
 """, unsafe_allow_html=True)
 
