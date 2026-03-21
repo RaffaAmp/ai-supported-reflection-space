@@ -526,7 +526,9 @@ user_first_interaction = user_just_asked_initial_question or user_just_clicked_s
 has_message_history = "messages" in st.session_state and len(st.session_state.messages) > 0
 
 if not user_first_interaction and not has_message_history:
-    st.session_state.messages = []
+    st.session_state.messages = [
+        {"role": "assistant", "content": "Hallo! 👋 Ich bin ein Informationsassistent für das Windpark Lindenberg Projekt in Beinwil.\n\nSie können mich fragen, was Sie über das Projekt wissen möchten, oder einfach Ihre Gedanken und Sorgen teilen. Ich arbeite nur mit den offiziellen Projektdokumenten und helfe Ihnen dabei, verschiedene Aspekte zu durchdenken.\n\nIch bin neutral - mein Ziel ist es, dass Sie sich besser informiert und vorbereitet fühlen, nicht dass Sie Ihre Meinung ändern. Die Nutzung ist anonym und freiwillig. 🔒\n\nWas geht Ihnen durch den Kopf, wenn Sie an das Windpark-Projekt denken?"}
+    ]
 
     with st.container():
         st.chat_input("Stellen Sie eine Frage...", key="initial_question")
