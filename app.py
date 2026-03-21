@@ -361,8 +361,7 @@ st.markdown("""
     
     /* Chat messages styling */
     .stChatMessage {
-        background: rgba(255, 255, 255, 0.15) !important;
-        backdrop-filter: blur(10px);
+        background: white !important;
         border-radius: 15px;
         border: 1px solid rgba(255, 255, 255, 0.2);
         margin: 1rem 0;
@@ -371,22 +370,21 @@ st.markdown("""
     
     /* User messages */
     .stChatMessage[data-testid="user-message"] {
-        background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%) !important;
-        color: white;
+        background: white !important;
+        color: #333;
         margin-left: 20%;
     }
     
     /* Assistant messages */
     .stChatMessage[data-testid="assistant-message"] {
-        background: rgba(255, 255, 255, 0.9) !important;
+        background: white !important;
         color: #333;
         margin-right: 20%;
     }
  
     /* Input styling */
 .stChatInput > div {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    background: white !important;
     border-radius: 25px;
     border: 1px solid rgba(255, 255, 255, 0.3) !important;
     box-shadow: none !important;
@@ -400,16 +398,16 @@ st.markdown("""
 
 .stChatInput input {
     background: transparent !important;
-    color: white !important;
+    color: #333 !important;
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
     text-shadow: none !important;
     -webkit-box-shadow: none !important;
     -moz-box-shadow: none !important;
-    -webkit-appearance: none !important; /* Added */
-    -moz-appearance: none !important; /* Added */
-    appearance: none !important; /* Added */
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
 }
 
 .stChatInput input:focus {
@@ -422,7 +420,7 @@ st.markdown("""
 }
 
 .stChatInput input::placeholder {
-    color: rgba(255, 255, 255, 0.7) !important;
+    color: rgba(0, 0, 0, 0.5) !important;
     text-shadow: none !important;
 }
 
