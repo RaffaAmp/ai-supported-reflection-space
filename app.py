@@ -530,30 +530,44 @@ st.markdown("""
         color: #333 !important;
     }
     
-    /* Fix chat input background to match gradient */
+    /* Fix chat input area background - comprehensive targeting */
     .stChatInput {
         background: transparent !important;
     }
     
-    /* Make the bottom area transparent */
-    .stBottom {
+    /* Target the bottom fixed container */
+    .stApp > div[data-testid="stAppViewContainer"] > div:last-child {
         background: transparent !important;
     }
     
-    /* Target the main chat input container */
-    div[data-testid="stChatInput"] {
+    /* Target any bottom containers */
+    div[data-testid="stBottom"] {
         background: transparent !important;
     }
     
-    /* Make sure the entire bottom section is transparent */
-    .stApp > div:last-child {
+    /* Make the entire app background consistent */
+    .stApp > div {
         background: transparent !important;
     }
     
-    /* Target the specific bottom container */
-    .stApp .stChatInput {
+    /* Target the chat input's parent containers */
+    .stChatInput, .stChatInput > div, .stChatInput * {
         background: transparent !important;
-        backdrop-filter: none !important;
+    }
+    
+    /* Override any fixed positioning backgrounds */
+    .stApp [data-testid="stChatInput"] {
+        background: transparent !important;
+    }
+    
+    /* Target the main app container's children */
+    .stApp > div[data-testid="stAppViewContainer"] {
+        background: transparent !important;
+    }
+    
+    /* Force all bottom elements to be transparent */
+    .stApp > div:last-of-type {
+        background: transparent !important;
     }
 </style>
 """, unsafe_allow_html=True)
