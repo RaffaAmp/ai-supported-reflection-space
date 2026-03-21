@@ -384,7 +384,7 @@ st.markdown("""
     }
     
     /* Input styling */
-    .stChatInput > div {
+.stChatInput > div {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     border-radius: 25px;
@@ -405,16 +405,20 @@ st.markdown("""
     outline: none !important;
     box-shadow: none !important;
     text-shadow: none !important;
-    -webkit-box-shadow: none !important; /* Added */
-    -moz-box-shadow: none !important; /* Added */
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-appearance: none !important; /* Added */
+    -moz-appearance: none !important; /* Added */
+    appearance: none !important; /* Added */
 }
 
 .stChatInput input:focus {
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
-    -webkit-box-shadow: none !important; /* Added */
-    -moz-box-shadow: none !important; /* Added */
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    background: transparent !important; /* Added */
 }
 
 .stChatInput input::placeholder {
@@ -426,16 +430,16 @@ st.markdown("""
 .stChatInput [data-testid="stChatInput"] {
     border: 1px solid rgba(255, 255, 255, 0.3) !important;
     box-shadow: none !important;
-    -webkit-box-shadow: none !important; /* Added */
-    -moz-box-shadow: none !important; /* Added */
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
 }
 
 .stChatInput [data-testid="stChatInput"]:focus-within {
     border: 1px solid rgba(255, 255, 255, 0.3) !important;
     outline: none !important;
     box-shadow: none !important;
-    -webkit-box-shadow: none !important; /* Added */
-    -moz-box-shadow: none !important; /* Added */
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
 }
 
 /* Target any nested input elements that might have shadows */
@@ -443,6 +447,18 @@ st.markdown("""
     box-shadow: none !important;
     -webkit-box-shadow: none !important;
     -moz-box-shadow: none !important;
+}
+
+/* Target textarea if it's being used instead of input */
+.stChatInput textarea {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
 }
     
     /* Buttons */
