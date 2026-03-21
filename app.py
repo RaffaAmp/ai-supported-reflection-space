@@ -722,7 +722,7 @@ st.markdown("""
         color: #333 !important;
     }
 
-    /* Make chat input scroll with content instead of staying fixed */
+    /* Make chat input scroll with content but keep buttons visible */
     .stChatInput {
         position: relative !important;
         bottom: auto !important;
@@ -746,6 +746,17 @@ st.markdown("""
         bottom: auto !important;
     }
 
+    /* Force buttons to be visible */
+    .stButton {
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    /* Make sure pills/suggestions are visible */
+    .stSelectbox, [data-testid="stSelectbox"] {
+        display: block !important;
+        visibility: visible !important;
+    }
     
 </style>
 """, unsafe_allow_html=True)
