@@ -559,10 +559,16 @@ if not user_first_interaction and not has_message_history:
 
 # Always display chat messages
 for i, message in enumerate(st.session_state.messages):
-    avatar = "https://raw.githubusercontent.com/RaffaAmp/ai-supported-reflection-space/refs/heads/main/Avatar.png" if message["role"] == "assistant" else None
-    with st.chat_message(message["role"], avatar=avatar):
+    if message["role"] == "assistant":
+        role_name = "assistant"
+        avatar = "https://raw.githubusercontent.com/RaffaAmp/ai-supported-reflection-space/refs/heads/main/Avatar.png"
+    else:
+        role_name = "person"  # Use a custom name to avoid default user icon
+        avatar = None
+    
+    with st.chat_message(role_name, avatar=avatar):
         st.markdown(message["content"])
-
+        
 # Show input and suggestions only if no interaction yet
 if not user_first_interaction and not has_message_history:
     with st.container():
@@ -603,7 +609,7 @@ if "prev_question_timestamp" not in st.session_state:
 if user_message:
     user_message = user_message.replace("$", r"\$")
 
-    with st.chat_message("user"):
+    with st.chat_message("person"):  # Use same custom name
         st.markdown(user_message)
 
     with st.chat_message("assistant", avatar="https://raw.githubusercontent.com/RaffaAmp/ai-supported-reflection-space/refs/heads/main/Avatar.png"):
