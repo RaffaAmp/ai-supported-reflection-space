@@ -388,25 +388,43 @@ st.markdown("""
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     border-radius: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    }
 
-.stChatInput input {
+    .stChatInput > div:focus-within {
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    outline: none !important;
+    box-shadow: none !important;
+    }
+
+    .stChatInput input {
     background: transparent !important;
     color: white !important;
     border: none !important;
     outline: none !important;
-}
+    box-shadow: none !important;
+    }
 
-.stChatInput input:focus {
+    .stChatInput input:focus {
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
-}
+    }
 
-.stChatInput input::placeholder {
+    .stChatInput input::placeholder {
     color: rgba(255, 255, 255, 0.7) !important;
-}
+    }
+
+    /* Additional targeting for Streamlit's chat input container */
+    .stChatInput [data-testid="stChatInput"] {
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    }
+
+    .stChatInput [data-testid="stChatInput"]:focus-within {
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    outline: none !important;
+    box-shadow: none !important;
+    }
     
     /* Buttons */
     .stButton > button {
