@@ -577,7 +577,7 @@ if user_message:
     user_message = user_message.replace("$", r"\$")
 
     with st.chat_message("user"):
-        st.text(user_message)
+        st.markdown(user_message)
 
     with st.chat_message("assistant", avatar="🧑🏽"):
         with st.spinner("Warten..."):
