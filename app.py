@@ -842,7 +842,7 @@ if not user_first_interaction and not has_message_history:
     )
     
     st.stop()
-user_message = st.chat_input("Stellen Sie eine Nachfrage...")
+user_message = st.chat_input("Stellen Sie eine Frage...")
 
 if not user_message:
     if user_just_asked_initial_question:
