@@ -1,6 +1,3 @@
-from audio_recorder_streamlit import audio_recorder
-import tempfile
-import os
 from htbuilder.units import rem
 from htbuilder import div, styles
 from collections import namedtuple
@@ -318,25 +315,6 @@ def get_response(prompt):
                 
     except Exception as e:
         yield f"Fehler bei der Antwortgenerierung: {str(e)}"
-
-        #Add Voice Functionality
-def text_to_speech(text):
-    """Convert text to speech using OpenAI TTS"""
-    try:
-        client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
-        
-        response = client.audio.speech.create(
-            model="tts-1",
-            voice="nova",
-            input=text,
-            speed=0.9
-        )
-        
-        return response.content
-    except Exception as e:
-        st.error(f"Fehler bei der Sprachausgabe: {str(e)}")
-        return None
-
 
 @st.dialog("Datenschutz & Nutzung")
 def show_disclaimer_dialog():
@@ -846,14 +824,6 @@ for i, message in enumerate(st.session_state.messages):
     with st.chat_message(role_name, avatar=avatar):
         st.markdown(message["content"])
         
-        # Add voice button for assistant messages
-        if message["role"] == "assistant":
-            if st.button("🔊", key=f"voice_{i}", help="Antwort anhören"):
-                with st.spinner("Generiere Sprache..."):
-                    audio_content = text_to_speech(message["content"])
-                    if audio_content:
-                        st.audio(audio_content, format="audio/mp3")
-        
 # Show input and suggestions only if no interaction yet
 if not user_first_interaction and not has_message_history:
     with st.container():
@@ -872,8 +842,7 @@ if not user_first_interaction and not has_message_history:
     )
     
     st.stop()
-
-user_message = None  # Add this line
+user_message = st.chat_input("Stellen Sie eine Nachfrage...")
 
 if not user_message:
     if user_just_asked_initial_question:
@@ -925,51 +894,3 @@ if user_message:
             response = st.write_stream(response_gen)
             st.session_state.messages.append({"role": "person", "content": user_message})
             st.session_state.messages.append({"role": "assistant", "content": response})
-
-
-# Voice and text input options (at the very bottom)
-col1, col2 = st.columns([4, 1])
-
-with col1:
-    user_message_voice = st.chat_input("Stellen Sie eine Nachfrage...")
-
-with col2:
-    audio_bytes = audio_recorder(
-        text="🎤",
-        recording_color="#e74c3c",
-        neutral_color="#95a5a6",
-        icon_name="microphone",
-        icon_size="2x"
-    )
-
-# Process voice input
-if audio_bytes:
-    try:
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmp_file:
-            tmp_file.write(audio_bytes)
-            tmp_file_path = tmp_file.name
-        
-        client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
-        with open(tmp_file_path, "rb") as audio_file:
-            transcript = client.audio.transcriptions.create(
-                model="whisper-1",
-                file=audio_file,
-                language="de"
-            )
-        
-        # Set the voice input as the user message
-        user_message = transcript.text
-        st.success(f"🎤 Verstanden: {user_message}")
-        os.unlink(tmp_file_path)
-        
-    except Exception as e:
-        st.error(f"Fehler bei der Spracherkennung: {str(e)}")
-
-# Use voice input if available, otherwise use text input
-if not user_message:
-    user_message = user_message_voice
-
-# Process the message (voice or text)
-if user_message:
-    # Your existing message processing code will handle it
-    st.rerun()
