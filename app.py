@@ -319,6 +319,25 @@ def get_response(prompt):
     except Exception as e:
         yield f"Fehler bei der Antwortgenerierung: {str(e)}"
 
+        #Add Voice Functionality
+def text_to_speech(text):
+    """Convert text to speech using OpenAI TTS"""
+    try:
+        client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+        
+        response = client.audio.speech.create(
+            model="tts-1",
+            voice="nova",
+            input=text,
+            speed=0.9
+        )
+        
+        return response.content
+    except Exception as e:
+        st.error(f"Fehler bei der Sprachausgabe: {str(e)}")
+        return None
+
+
 @st.dialog("Datenschutz & Nutzung")
 def show_disclaimer_dialog():
     st.markdown("""
@@ -853,48 +872,9 @@ if not user_first_interaction and not has_message_history:
     )
     
     st.stop()
-    
-# Voice and text input options
-col1, col2 = st.columns([4, 1])
 
-with col1:
-    user_message = st.chat_input("Stellen Sie eine Frage...")
+user_message = None  # Add this line
 
-with col2:
-    audio_bytes = audio_recorder(
-        text="🎤",
-        recording_color="#e74c3c",
-        neutral_color="#95a5a6",
-        icon_name="microphone",
-        icon_size="2x"
-    )
-
-
-# Process voice input
-if audio_bytes and not user_message:
-    try:
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmp_file:
-            tmp_file.write(audio_bytes)
-            tmp_file_path = tmp_file.name
-        
-        client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
-        with open(tmp_file_path, "rb") as audio_file:
-            transcript = client.audio.transcriptions.create(
-                model="whisper-1",
-                file=audio_file,
-                language="de"
-            )
-        
-        user_message = transcript.text
-        st.success(f"🎤 Verstanden: {user_message}")
-        os.unlink(tmp_file_path)
-        
-    except Exception as e:
-        st.error(f"Fehler bei der Spracherkennung: {str(e)}")
-
-
-
-#separator
 if not user_message:
     if user_just_asked_initial_question:
         user_message = st.session_state.initial_question
@@ -946,20 +926,50 @@ if user_message:
             st.session_state.messages.append({"role": "person", "content": user_message})
             st.session_state.messages.append({"role": "assistant", "content": response})
 
-        #Add Voice Functionality
-def text_to_speech(text):
-    """Convert text to speech using OpenAI TTS"""
+
+# Voice and text input options (at the very bottom)
+col1, col2 = st.columns([4, 1])
+
+with col1:
+    user_message_voice = st.chat_input("Stellen Sie eine Nachfrage...")
+
+with col2:
+    audio_bytes = audio_recorder(
+        text="🎤",
+        recording_color="#e74c3c",
+        neutral_color="#95a5a6",
+        icon_name="microphone",
+        icon_size="2x"
+    )
+
+# Process voice input
+if audio_bytes:
     try:
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmp_file:
+            tmp_file.write(audio_bytes)
+            tmp_file_path = tmp_file.name
+        
         client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+        with open(tmp_file_path, "rb") as audio_file:
+            transcript = client.audio.transcriptions.create(
+                model="whisper-1",
+                file=audio_file,
+                language="de"
+            )
         
-        response = client.audio.speech.create(
-            model="tts-1",
-            voice="nova",
-            input=text,
-            speed=0.9
-        )
+        # Set the voice input as the user message
+        user_message = transcript.text
+        st.success(f"🎤 Verstanden: {user_message}")
+        os.unlink(tmp_file_path)
         
-        return response.content
     except Exception as e:
-        st.error(f"Fehler bei der Sprachausgabe: {str(e)}")
-        return None
+        st.error(f"Fehler bei der Spracherkennung: {str(e)}")
+
+# Use voice input if available, otherwise use text input
+if not user_message:
+    user_message = user_message_voice
+
+# Process the message (voice or text)
+if user_message:
+    # Your existing message processing code will handle it
+    st.rerun()
