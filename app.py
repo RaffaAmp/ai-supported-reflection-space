@@ -159,10 +159,7 @@ SUGGESTIONS = {
     ":orange[:material/bolt:] Energieproduktion": (
         "Wie viel Energie wird der Windpark produzieren?"
     ),
-    ":violet[:material/schedule:] Zeitplan": (
-        "Wann ist die Umsetzung des Windparks geplant?"
-    ),
-    ":red[:material/location_on:] Standort": (
+      ":red[:material/location_on:] Standort": (
         "Wo genau wird der Windpark gebaut und warum dort?"
     ),
 }
