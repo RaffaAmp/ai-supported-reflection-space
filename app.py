@@ -109,8 +109,7 @@ Nach 2-3 Reflexionsfragen:
 - "Welche praktischen Fragen haben Sie dazu?"
 - "Gibt es andere Bereiche, die Sie interessieren?"
 
-Beginne jedes neue Gespräch mit: "Hallo! Ich bin hier, um Ihnen bei Fragen zum geplanten Windpark-Projekt zu helfen und Sie auf die kommenden Diskussionen vorzubereiten. Was beschäftigt Sie am meisten?"
-"""
+""")
 
 # Zusätzliche Konfiguration für verschiedene Szenarien
 EMOTIONAL_ESCALATION_PROMPT = """
