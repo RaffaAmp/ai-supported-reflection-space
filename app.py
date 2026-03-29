@@ -135,7 +135,7 @@ Der Nutzer ist vom Windpark-Thema abgewichen. Aktiviere REDIRECT-MODE:
 - Leite zurück zum Windpark-Projekt
 - Biete konkrete Gesprächsoptionen an
 - Bei wiederholten Versuchen: Klare Grenzen kommunizieren
-""")
+"""
 
 SUGGESTIONS = {
     ":green[:material/nature:] Umweltauswirkungen": (
