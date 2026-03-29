@@ -214,6 +214,31 @@ def get_response(prompt):
     except Exception as e:
         yield f"Fehler bei der Antwortgenerierung: {str(e)}"
 
+#Add Download feature
+import json
+
+def download_conversation():
+    """Create downloadable conversation file"""
+    if 'messages' in st.session_state and st.session_state.messages:
+        # Generate session ID if not exists
+        if 'session_id' not in st.session_state:
+            st.session_state.session_id = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
+        
+        conversation_data = {
+            'timestamp': datetime.datetime.now().isoformat(),
+            'session_id': st.session_state.session_id,
+            'messages': st.session_state.messages,
+            'total_messages': len(st.session_state.messages),
+            'project': 'Windpark Lindenberg'
+        }
+        
+        # Convert to JSON string
+        json_string = json.dumps(conversation_data, ensure_ascii=False, indent=2)
+        return json_string
+    return None
+
+#end
+
 @st.dialog("Datenschutz & Nutzung")
 def show_disclaimer_dialog():
     st.markdown("""
@@ -703,6 +728,30 @@ user_just_clicked_suggestion = (
 user_first_interaction = user_just_asked_initial_question or user_just_clicked_suggestion
 has_message_history = "messages" in st.session_state and len(st.session_state.messages) > 0
 
+#add download feature
+with title_row:
+    st.title("Windpark Lindenberg Assistant", anchor=False, width="stretch")
+
+# Add download functionality in sidebar
+if 'messages' in st.session_state and len(st.session_state.messages) > 1:  # Only show if there's a conversation
+    with st.sidebar:
+        st.markdown("### 📥 Gespräch für Test teilen")
+        st.markdown("Helfen Sie uns, den Assistenten zu verbessern!")
+        
+        if st.button("💾 Gespräch herunterladen", type="primary"):
+            conversation_json = download_conversation()
+            if conversation_json:
+                st.download_button(
+                    label="📄 Als JSON-Datei herunterladen",
+                    data=conversation_json,
+                    file_name=f"windpark_gespräch_{datetime.datetime.now().strftime('%Y%m%d_%H%M')}.json",
+                    mime="application/json"
+                )
+                st.success("✅ Bereit zum Download!")
+                st.markdown("📧 **Bitte senden Sie die Datei.")
+                st.markdown("*Ihre Teilnahme hilft uns, den Assistenten zu verbessern. Vielen Dank!*")
+
+#end
 
 # Initialize messages with greeting if first time
 if not user_first_interaction and not has_message_history:
