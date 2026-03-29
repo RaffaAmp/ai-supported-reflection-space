@@ -217,21 +217,34 @@ def get_response(prompt):
 
 #Add Download feature
 def download_conversation():
-    """Create downloadable conversation file"""
+    """Create downloadable conversation file as readable text"""
     if 'messages' in st.session_state and st.session_state.messages:
         if 'session_id' not in st.session_state:
             st.session_state.session_id = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
         
-        conversation_data = {
-            'timestamp': datetime.datetime.now().isoformat(),
-            'session_id': st.session_state.session_id,
-            'messages': st.session_state.messages,
-            'total_messages': len(st.session_state.messages),
-            'project': 'Windpark Lindenberg'
-        }
+        # Create readable text format
+        conversation_text = "=" * 60 + "\n"
+        conversation_text += "WINDPARK LINDENBERG - GESPRÄCHSPROTOKOLL\n"
+        conversation_text += "=" * 60 + "\n\n"
+        conversation_text += f"Datum: {datetime.datetime.now().strftime('%d.%m.%Y um %H:%M Uhr')}\n"
+        conversation_text += f"Session-ID: {st.session_state.session_id}\n"
+        conversation_text += f"Anzahl Nachrichten: {len(st.session_state.messages)}\n\n"
+        conversation_text += "-" * 60 + "\n\n"
         
-        json_string = json.dumps(conversation_data, ensure_ascii=False, indent=2)
-        return json_string
+        for i, msg in enumerate(st.session_state.messages, 1):
+            if msg["role"] == "assistant":
+                speaker = "🤖 ASSISTENT"
+            else:
+                speaker = "👤 NUTZER"
+            
+            conversation_text += f"{speaker} (Nachricht {i}):\n"
+            conversation_text += f"{msg['content']}\n\n"
+            conversation_text += "-" * 40 + "\n\n"
+        
+        conversation_text += "Ende des Gesprächs\n"
+        conversation_text += "=" * 60
+        
+        return conversation_text
     return None
 #end
 
@@ -738,10 +751,10 @@ if 'messages' in st.session_state and len(st.session_state.messages) > 1:  # Onl
             conversation_json = download_conversation()
             if conversation_json:
                 st.download_button(
-                    label="📄 Als JSON-Datei herunterladen",
+                    label="📝 Als Text-Datei herunterladen",
                     data=conversation_json,
-                    file_name=f"windpark_gespräch_{datetime.datetime.now().strftime('%Y%m%d_%H%M')}.json",
-                    mime="application/json"
+                    file_name=f"windpark_gespräch_{datetime.datetime.now().strftime('%Y%m%d_%H%M')}.txt",
+                    mime="text/plain"
                 )
                 st.success("✅ Bereit zum Download!")
                 st.markdown("📧 **Bitte senden Sie die Datei.")
