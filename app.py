@@ -718,6 +718,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+st.html(div(style=styles(font_size=rem(5), line_height=1))["🌱"])
 
 title_row = st.container(horizontal=True, vertical_alignment="bottom")
 
@@ -734,10 +735,6 @@ user_just_clicked_suggestion = (
 
 user_first_interaction = user_just_asked_initial_question or user_just_clicked_suggestion
 has_message_history = "messages" in st.session_state and len(st.session_state.messages) > 0
-
-#add download feature
-with title_row:
-    st.title("Windpark Lindenberg Assistant", anchor=False, width="stretch")
 
 # Add download functionality in sidebar
 if 'messages' in st.session_state and len(st.session_state.messages) > 1:  # Only show if there's a conversation
