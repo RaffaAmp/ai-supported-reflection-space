@@ -719,8 +719,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-st.html(div(style=styles(font_size=rem(5), line_height=1))["🌱"])
-
 title_row = st.container(horizontal=True, vertical_alignment="bottom")
 
 with title_row:
