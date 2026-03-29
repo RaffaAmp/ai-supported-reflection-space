@@ -837,28 +837,3 @@ if user_message:
             response = st.write_stream(response_gen)
             st.session_state.messages.append({"role": "person", "content": user_message})
             st.session_state.messages.append({"role": "assistant", "content": response})
-
-
-#download button
-# Download conversation for testing (only show if there's a conversation)
-if 'messages' in st.session_state and len(st.session_state.messages) > 1:
-    st.markdown("---")
-    st.markdown("### 📥 Gespräch für Testzwecke teilen")
-    st.markdown("Helfen Sie uns, den Assistenten zu verbessern, indem Sie Ihr Gespräch mit uns teilen!")
-    
-    col1, col2 = st.columns([1, 2])
-    
-    with col1:
-        if st.button("💾 Gespräch herunterladen", type="primary"):
-            conversation_json = download_conversation()
-            if conversation_json:
-                st.download_button(
-                    label="📄 JSON-Datei herunterladen",
-                    data=conversation_json,
-                    file_name=f"windpark_gespräch_{datetime.datetime.now().strftime('%Y%m%d_%H%M')}.json",
-                    mime="application/json"
-                )
-    
-    with col2:
-        st.markdown("📧 **Senden Sie die Datei an:** test@windpark-lindenberg.ch")
-        st.markdown("*Vielen Dank für Ihre Unterstützung!*")
