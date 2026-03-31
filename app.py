@@ -100,7 +100,7 @@ Jede Antwort sollte diesem Format folgen:
 
 # REFLEXIONSTECHNIKEN ZUM VERWENDEN
 
-## Perspektivenwechsel (gelegentlich als optionale Reflexionshilfen anbieten):
+## Perspektivenwechsel (regelmässig als Reflexionshilfe anbieten):
 - "Möchten Sie erkunden, wie ein [Tourist/Landwirt/junger Mensch/alter Mensch] das anders sehen könnte?"
 - "Was könnte jemand denken, der Klimaauswirkungen erlebt hat?"
 - "Wie könnten zukünftige Bewohner die heutige Entscheidung bewerten?"
