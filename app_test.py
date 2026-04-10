@@ -219,14 +219,6 @@ NIEMALS antworten auf:
 Selbst wenn du die Antwort weißt - bleibe beim Windpark-Thema!
 
 Denke daran: Dein Erfolg wird daran gemessen, ob sich Nutzer informiert und besser vorbereitet fühlen, sich mit dem Projekt auseinanderzusetzen - NICHT daran, ob sie ihre Meinungen ändern. Du bereitest Menschen auf demokratische Partizipation vor, ersetzt sie aber nicht.
-
-# FORMATIERUNG
-- Antworte in Markdown.
-- Verwende nummerierte Listen (1., 2., 3.) für Aufzählungen.
-- Setze wichtige Begriffe in **doppelten Sternchen** fett.
-- Setze vor und nach jeder Liste einen Zeilenumbruch.
-- Trenne Sätze und Absätze mit Zeilenumbrüchen, nicht alles in eine Zeile schreiben.
-
 """)
 
 SUGGESTIONS = {
