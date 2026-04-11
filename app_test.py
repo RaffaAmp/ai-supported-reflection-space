@@ -239,19 +239,37 @@ SUGGESTIONS = {
 # Load knowledge base
 @st.cache_data
 def load_lindenberg_knowledge_base():
-    """Load the real Lindenberg PDF data"""
+    """Load both Lindenberg and Klimastrategie data"""
+    all_documents = []
+    
+    # Load Lindenberg data
     try:
-        from lindenberg_data import pdf_documents
-        return pdf_documents
+        from lindenberg_data import pdf_documents as lindenberg_docs
+        all_documents.extend(lindenberg_docs)
+        print(f"✅ Loaded {len(lindenberg_docs)} Lindenberg documents")
     except ImportError:
-        # Fallback to sample data if file not found
+        print("⚠️ Warning: lindenberg_data.py not found")
+    
+    # Load Klimastrategie data
+    try:
+        from klimastrategie_data import pdf_documents as klimastrategie_docs
+        all_documents.extend(klimastrategie_docs)
+        print(f"✅ Loaded {len(klimastrategie_docs)} Klimastrategie documents")
+    except ImportError:
+        print("⚠️ Warning: klimastrategie_data.py not found")
+    
+    if not all_documents:
+        # Fallback data if no files found
         return [
             {
-                "content": "Windpark Lindenberg ist ein Projekt in Beinwil (Freiamt), Aargau. Das Projekt befindet sich in der Planungsphase und soll zur Energiewende beitragen.",
-                "source": "Lindenberg_Planungsbericht",
-                "category": "general"
+                "content": "Keine Dokumente gefunden. Bitte laden Sie die Datendateien hoch.",
+                "source": "System",
+                "category": "error"
             }
         ]
+    
+    print(f"📊 Total documents loaded: {len(all_documents)}")
+    return all_documents
 
 def improved_search(query, documents, max_results=3):
     """Enhanced search function with better matching"""
