@@ -202,6 +202,12 @@ def improved_search(query, documents, max_results=3):
             'energie': ['energie', 'strom', 'leistung', 'kwh', 'mw'],
             'bau': ['bau', 'errichtung', 'konstruktion', 'montage'],
             'kosten': ['kosten', 'preis', 'finanzierung', 'investition']
+            #for klimastrategie_data
+            'klima': ['klima', 'klimastrategie', 'klimawandel', 'klimaschutz'],
+            'emission': ['emission', 'treibhausgas', 'co2', 'kohlendioxid'],
+            'netto': ['netto-null', 'netto', 'null', 'klimaneutral'],
+            'ziel': ['2050', 'ziel', 'strategie', 'bundesrat'],
+            'schweiz': ['schweiz', 'schweizerisch', 'eidgenossenschaft', 'bund']
         }
         
         for topic, related_words in keywords.items():
