@@ -138,11 +138,11 @@ def load_lindenberg_knowledge_base():
     
     # Load Lindenberg data
     try:
-        from windpark_data import pdf_documents as windpark_docs
-        all_documents.extend(windpark_docs)
-        print(f"✅ Loaded {len(windpark_docs)} Windpark documents")
+        from lindenberg_data import pdf_documents as lindenberg_docs
+        all_documents.extend(lindenberg_docs)
+        print(f"✅ Loaded {len(lindenberg_docs)} Lindenberg documents")
     except ImportError:
-        print("⚠️ Warning: windpark_data.py not found")
+        print("⚠️ Warning: lindenberg_data.py not found")
     
     # Load Klimastrategie data
     try:
