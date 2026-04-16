@@ -201,7 +201,7 @@ def improved_search(query, documents, max_results=3):
             'lärm': ['lärm', 'schall', 'geräusch', 'dezibel'],
             'energie': ['energie', 'strom', 'leistung', 'kwh', 'mw'],
             'bau': ['bau', 'errichtung', 'konstruktion', 'montage'],
-            'kosten': ['kosten', 'preis', 'finanzierung', 'investition']
+            'kosten': ['kosten', 'preis', 'finanzierung', 'investition'],
             #for klimastrategie_data
             'klima': ['klima', 'klimastrategie', 'klimawandel', 'klimaschutz'],
             'emission': ['emission', 'treibhausgas', 'co2', 'kohlendioxid'],
