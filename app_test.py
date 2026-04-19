@@ -18,7 +18,7 @@ st.set_page_config(page_title="Windpark Lindenberg Assistant", page_icon="🌱")
 MODEL = "gpt-4o"
 HISTORY_LENGTH = 5
 SUMMARIZE_OLD_HISTORY = True
-CONTEXT_LEN = 3
+CONTEXT_LEN = 5
 MIN_TIME_BETWEEN_REQUESTS = datetime.timedelta(seconds=1)
 
 DEBUG_MODE = st.query_params.get("debug", "false").lower() == "true"
