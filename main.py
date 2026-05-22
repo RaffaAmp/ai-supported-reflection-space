@@ -14,10 +14,12 @@ from app_test import (
     HISTORY_LENGTH,
     CONTEXT_LEN,
     load_lindenberg_knowledge_base,
-    improved_search,
     build_prompt,
     history_to_text,
 )
+
+# Import BM25 search directly (avoids unnecessary Streamlit import)
+from bm25_search import improved_search
 
 Role = Literal["user", "assistant"]
 
