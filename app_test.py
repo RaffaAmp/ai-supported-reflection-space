@@ -151,7 +151,15 @@ def load_lindenberg_knowledge_base():
         print(f"✅ Loaded {len(klimastrategie_docs)} Klimastrategie documents")
     except ImportError:
         print("⚠️ Warning: klimastrategie_data.py not found")
-    
+
+    # Load speed2zero
+    try:
+        from speed2zero_data import pdf_documents as speed2zero_docs
+        all_documents.extend(speed2zero_docs)
+        print(f"✅ Loaded {len(speed2zero_docs)} speed2zero documents")
+    except ImportError:
+        print("⚠️ Warning: speed2zero_data.py not found")
+
     if not all_documents:
         # Fallback data if no files found
         return [
