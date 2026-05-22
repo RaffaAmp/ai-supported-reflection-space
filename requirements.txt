@@ -4,3 +4,4 @@ htbuilder
 fastapi
 uvicorn[standard]
 pydantic
+rank-bm25==0.2.2
