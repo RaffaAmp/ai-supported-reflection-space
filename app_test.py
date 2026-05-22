@@ -12,6 +12,8 @@ import json
 import streamlit as st
 from openai import OpenAI
 
+from bm25_search import improved_search
+
 st.set_page_config(page_title="Windpark Lindenberg Assistant", page_icon="🌱")
 
 # Configuration
@@ -173,61 +175,6 @@ def load_lindenberg_knowledge_base():
     print(f"📊 Total documents loaded: {len(all_documents)}")
     return all_documents
 
-def improved_search(query, documents, max_results=3):
-    """Enhanced search function with better matching"""
-    if not documents:
-        return []
-        
-    query_lower = query.lower()
-    query_words = query_lower.split()
-    scored_docs = []
-    
-    for doc in documents:
-        content_lower = doc["content"].lower()
-        score = 0
-        
-        # Exact phrase match (highest score)
-        if query_lower in content_lower:
-            score += 20
-        
-        # Word matches
-        for word in query_words:
-            if len(word) > 2:  # Skip very short words
-                if word in content_lower:
-                    score += content_lower.count(word) * 2
-        
-        # Partial word matches (for German compound words)
-        for word in query_words:
-            if len(word) > 3:
-                for content_word in content_lower.split():
-                    if word in content_word or content_word in word:
-                        score += 1
-        
-        # Keyword matching for common topics
-        keywords = {
-            'umwelt': ['umwelt', 'natur', 'ökologie', 'lebensraum'],
-            'lärm': ['lärm', 'schall', 'geräusch', 'dezibel'],
-            'energie': ['energie', 'strom', 'leistung', 'kwh', 'mw'],
-            'bau': ['bau', 'errichtung', 'konstruktion', 'montage'],
-            'kosten': ['kosten', 'preis', 'finanzierung', 'investition'],
-            #for klimastrategie_data
-            'klima': ['klima', 'klimastrategie', 'klimawandel', 'klimaschutz'],
-            'emission': ['emission', 'treibhausgas', 'co2', 'kohlendioxid'],
-            'netto': ['netto-null', 'netto', 'null', 'klimaneutral'],
-            'ziel': ['2050', 'ziel', 'strategie', 'bundesrat'],
-            'schweiz': ['schweiz', 'schweizerisch', 'eidgenossenschaft', 'bund']
-        }
-        
-        for topic, related_words in keywords.items():
-            if any(kw in query_lower for kw in related_words):
-                if any(kw in content_lower for kw in related_words):
-                    score += 5
-            
-        if score > 0:
-            scored_docs.append((score, doc))
-    
-    scored_docs.sort(key=lambda x: x[0], reverse=True)
-    return [doc for score, doc in scored_docs[:max_results]]
 
 def build_prompt(**kwargs):
     """Builds a prompt string with the kwargs as HTML-like tags."""
