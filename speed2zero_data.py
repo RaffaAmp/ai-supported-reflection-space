@@ -6,7 +6,7 @@ Generated for Windpark Lindenberg Assistant integration
 pdf_documents = [
     {
         "content": """Information
-Gekoppelte Herausforderungen für die Schweiz: Schnittstellen im Klimaschutz, Biodiversitaetsschutz, Energiesicherheit und Landschaftsschutz
+Gekoppelte Herausforderungen fÃ¼r die Schweiz: Schnittstellen im Klimaschutz, Biodiversitaetsschutz, Energiesicherheit und Landschaftsschutz
 Whitepaper
 Cyril Brunner, Rebecca Lordan-Perret, Elisa Cadelli, Nadine Salzmann, Dirk N. Karger, Niklaus E. Zimmermann
 17. Mai 2024
@@ -107,9 +107,9 @@ Weltweit, aber auch in der Schweiz, nimmt die Biodiversitaet in alarmierendem Au
     {
         "content": """Untaetigkeit hat ihren Preis
 
-Mit einer Erwaermung von 2.8°C hat sich die Schweiz seit dem Zeitraum 1871-1900 mehr als doppelt so stark erwaermt wie der globale Durchschnitt. Die gegenwaertige und kuenftige rasche Erwaermung und die Veraenderung anderer wichtiger Klimavariablen wie der Niederschlaege werden die natuerlichen Oekosysteme schaedigen und die Biodiversitaet direkt verringern. Waehren einheimische Arten verschwinden, werden nicht-einheimische Arten ihren Platz einnehmen. Einige von ihnen koennen invasiv werden. Der Temperaturanstieg hat und wird auch in Zukunft die Landschaft veraendern, z.B. durch das Verschwinden von Gletschern, destabilisierte Haenge infolge des auftauenden Permafrosts oder abgestorbene, ausgetrocknete Waelder.
+Mit einer Erwaermung von 2.8Â°C hat sich die Schweiz seit dem Zeitraum 1871-1900 mehr als doppelt so stark erwaermt wie der globale Durchschnitt. Die gegenwaertige und kuenftige rasche Erwaermung und die Veraenderung anderer wichtiger Klimavariablen wie der Niederschlaege werden die natuerlichen Oekosysteme schaedigen und die Biodiversitaet direkt verringern. Waehren einheimische Arten verschwinden, werden nicht-einheimische Arten ihren Platz einnehmen. Einige von ihnen koennen invasiv werden. Der Temperaturanstieg hat und wird auch in Zukunft die Landschaft veraendern, z.B. durch das Verschwinden von Gletschern, destabilisierte Haenge infolge des auftauenden Permafrosts oder abgestorbene, ausgetrocknete Waelder.
 
-Eine der Hauptbegruendungen fuer die Begrenzung der globalen Erwaermung auf 1.5°C ist die Vermeidung irreversibler Schaeden an der globalen Biodiversitaet. Bei einer Erwaermung von 2°C wuerde die globale Erwaermung zum groessten Treiber fuer den Verlust der Biodiversitaet werden. Daher wird jede der realisierbaren Netto-Null-Strategien zum Schutz der Biodiversitaet beitragen, indem sie den Klimawandel abschwaecht.
+Eine der Hauptbegruendungen fuer die Begrenzung der globalen Erwaermung auf 1.5Â°C ist die Vermeidung irreversibler Schaeden an der globalen Biodiversitaet. Bei einer Erwaermung von 2Â°C wuerde die globale Erwaermung zum groessten Treiber fuer den Verlust der Biodiversitaet werden. Daher wird jede der realisierbaren Netto-Null-Strategien zum Schutz der Biodiversitaet beitragen, indem sie den Klimawandel abschwaecht.
 
 Andererseits sind Klimaschutzmassnahmen nicht frei von negativen Auswirkungen auf lokaler oder regionaler Ebene. In vielen Faellen lassen sich die Auswirkungen neuer erneuerbarer Infrastrukturen auf die Biodiversitaet am besten minimieren, wenn sie auf bestehenden Infrastrukturen wie Gebaeuden, Strassen oder Lawinenschutz platziert werden, oder dort, wo die Biodiversitaet bereits stark beeintraechtigt ist, wie z.B. auf bewirtschafteten Flaechen. Dies ist jedoch nicht in jedem Fall moeglich oder optimal. Daraus entsteht ein Spannungsverhaeltnis zwischen der Minimierung der insgesamt gewidmeten Flaeche und der Vermeidung sensibler Gebiete.""",
         "source": "SPEED2ZERO_Whitepaper",
