@@ -162,6 +162,30 @@ def load_lindenberg_knowledge_base():
     except ImportError:
         print("⚠️ Warning: speed2zero_data.py not found")
 
+    # Load Richtplan Aargau
+    try:
+        from richtplan_aargau import pdf_documents as richtplan_docs
+        all_documents.extend(richtplan_docs)
+        print(f"✅ Loaded {len(richtplan_docs)} Richtplan Aargau documents")
+    except ImportError:
+        print("⚠️ Warning: richtplan_aargau.py not found")
+
+    # Load Windenergie Schweiz
+    try:
+        from windenergie_schweiz import pdf_documents as windenergie_docs
+        all_documents.extend(windenergie_docs)
+        print(f"✅ Loaded {len(windenergie_docs)} Windenergie Schweiz documents")
+    except ImportError:
+        print("⚠️ Warning: windenergie_schweiz.py not found")
+
+    # Load Acceptance Model
+    try:
+        from acceptance_model import pdf_documents as acceptance_docs
+        all_documents.extend(acceptance_docs)
+        print(f"✅ Loaded {len(acceptance_docs)} Acceptance Model documents")
+    except ImportError:
+        print("⚠️ Warning: acceptance_model.py not found")
+   
     if not all_documents:
         # Fallback data if no files found
         return [
