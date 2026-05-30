@@ -1,56 +1,92 @@
 pdf_documents = [
   {
-    "content": """Zusammenfassung
+    "content": """Ausgangslage / Gesetzliche Grundlage / Auftrag
 
-Der Ausbau der Windenergie ist Teil der Energiestrategie 2050 des Bundes und soll zur Vorbereitung auf Veränderungen der internationalen Energiemärkte sowie auf mögliche Versorgungsengpässe beitragen. Für das Jahr 2050 wird schweizweit eine Stromproduktion aus Windenergie von rund 4000 GWh angestrebt, während die heutige Produktion aus Grossanlagen erst bei rund 125 GWh pro Jahr liegt. Im Kanton Aargau gilt bis 2035 ein kantonales Ziel von 50 GWh jährlicher Produktion.
+Zur Vorbereitung auf grundlegende VerÃ¤nderungen der internationalen EnergiemÃ¤rkte und mÃ¶gliche EngpÃ¤sse soll gemÃ¤ss Energiestrategie 2050 des Bundes auch der Ausbau der Windenergie beitragen. Windenergieanlagen sollen im Jahr 2050 gesamtschweizerisch rund 4000 GWh Strom produzieren. Aktuell betrÃ¤gt die Produktion aus Grossanlagen rund 125 GWh pro Jahr. Bis im Jahr 2035 soll gesamtkantonal eine Stromproduktion von jÃ¤hrlich 50 GWh erreicht werden.
 
-Rechtlich ist festgelegt, dass die Nutzung und der Ausbau erneuerbarer Energien ab einer bestimmten Grösse von nationalem Interesse sind. Bei Windkraftanlagen gilt dies ab einer Produktionsmenge von 20 GWh pro Jahr. Dieses Interesse ist den Anliegen des Natur- und Landschaftsschutzes gleichwertig gegenüberzustellen. Windkraftanlagen mit mehr als 30 Metern Gesamthöhe unterliegen in jedem Fall der Planungspflicht, benötigen eine Grundlage im kantonalen Richtplan und zusätzlich eine Spezialzone in der kommunalen oder kantonalen Nutzungsplanung. Neue Gebiete im Richtplan werden nur ausgeschieden, wenn ein minimaler energetischer Nutzen und eine minimale Anzahl realisierbarer Anlagen nachgewiesen werden.""",
+Die Nutzung erneuerbarer Energien und ihr Ausbau sind ab einer bestimmten GrÃ¶sse von nationalem Interesse; fÃ¼r Windkraftanlagen ab einer Produktionsmenge von 20 GWh pro Jahr. Dieses Interesse steht den nationalen Interessen des Natur- und Landschaftsschutzes gleichwertig gegenÃ¼ber. Bei gleichwertigen Standorten sind Standorte ausserhalb Wald zu wÃ¤hlen. Die Ausscheidung neuer Gebiete fÃ¼r Windkraftanlagen im Richtplan setzt einen minimalen energetischen Nutzen sowie eine minimale Anzahl an einem Standort zu realisierender Anlagen voraus.""",
     "source": "Richtplan Aargau, Seite 1",
     "category": "windenergie_rechtsgrundlagen"
   },
   {
-    "content": """Zusammenfassung
+    "content": """Ausgangslage / Gesetzliche Grundlage / Auftrag
 
-Der Kanton Aargau gehört im schweizweiten Vergleich nicht zu den bevorzugten Regionen für Windkraftanlagen. Gründe dafür sind das begrenzte Windpotenzial, das auf Modellierungen und punktuellen Messungen beruht, die relativ dichte Besiedlung auch ausserhalb der Zentren sowie eine Topografie, die windreiche Gebiete häufig grossräumig sichtbar macht. Dadurch treten Windenergieprojekte besonders stark mit Siedlung, Landschaft und Erholung in Beziehung.
+Windkraftanlagen sollen in Gebieten mit guten WindverhÃ¤ltnissen konzentriert werden. Die WindverhÃ¤ltnisse beschreiben die tatsÃ¤chlichen Windgeschwindigkeiten und Windrichtungen an einem Ort oder in einem Gebiet. Vorrang haben grosse Anlagen. Windkraftanlagen mit einer GesamthÃ¶he von mehr als 30 m fallen aufgrund ihrer Raumwirksamkeit in jedem Fall unter die Planungspflicht gemÃ¤ss Art. 2 RPG. Sie bedÃ¼rfen einer Grundlage im kantonalen Richtplan. In der kommunalen Nutzungsplanung oder in einem kantonalen Nutzungsplan ist eine Spezialzone als Grundlage fÃ¼r das Baubewilligungsverfahren auszuscheiden.
 
-Die Planung und Realisierung von Windkraftanlagen verlangt deshalb eine sorgfältige räumliche Abstimmung. Neben technischen Anforderungen wie Windpotenzial, Untergrund und Erschliessung müssen insbesondere Natur, Landschaft, Wald und Siedlung berücksichtigt werden. Zu den wesentlichen Auswirkungen zählen Lärm, Schattenwurf, Eingriffe in Flora und Fauna sowie Veränderungen des weithin wahrnehmbaren Landschaftsbilds. Gleichzeitig können technologische Fortschritte, etwa höhere Türme und effizientere Rotoren, sowie veränderte Energiepreise dazu führen, dass künftig weitere Gebiete wirtschaftlich nutzbar werden. Vor diesem Hintergrund ist der Kanton gefordert, zusätzliche Windenergiegebiete zu prüfen und wenn möglich auszuscheiden, um den gesetzlichen Auftrag im Rahmen eines Orientierungsrahmens von 40 bis 180 GWh pro Jahr zu erfüllen.""",
-    "source": "Richtplan Aargau, Seite 2",
-    "category": "windenergie_planungsherausforderungen"
+GrÃ¶ssere Energieerzeugungsanlagen benÃ¶tigen eine Betriebsbewilligung des Regierungsrats, wenn sie nicht einer besonderen Gesetzgebung des Bundes unterliegen. Der Regierungsrat legt fÃ¼r die Abgrenzung der Betriebsbewilligungspflicht leistungsbezogene Schwellenwerte fest.""",
+    "source": "Richtplan Aargau, Seite 1",
+    "category": "windenergie_planungspflicht_bewilligung"
   },
   {
-    "content": """Zusammenfassung
+    "content": """Herausforderung
 
-Im kantonalen Richtplan sind derzeit fünf Gebiete bezeichnet, die für eine vertiefte Überprüfung ihrer Eignung für Windkraftanlagen infrage kommen. Deren theoretisches Produktionspotenzial wird auf rund 50 GWh pro Jahr geschätzt. Bis zum Jahr 2023 wurde im Kanton Aargau jedoch noch keine grössere Windenergieanlage realisiert. Weitere Gebiete können nur dann in den Richtplan aufgenommen werden, wenn positive Planungsergebnisse und räumlich abgestimmte Vorschläge vorliegen.
+Der Kanton Aargau ist im gesamtschweizerischen Kontext kein bevorzugtes Gebiet fÃ¼r Windkraftanlagen, namentlich aufgrund seines Windpotenzials und der relativ dichten Besiedlung auch in lÃ¤ndlichen Gebieten. Die Topografie macht Gebiete mit grÃ¶sserem Windpotenzial oft grossrÃ¤umig einsehbar. Die Planung und Realisierung von Windkraftanlagen erfordern deshalb eine sorgfÃ¤ltige rÃ¤umliche Abstimmung.
 
-Eine zentrale Grundlage für die Standortbeurteilung ist die Windpotenzialkarte des Kantons Aargau, die auf einem strömungsmechanischen Computermodell sowie ergänzenden Windmessungen basiert. Sie gilt weiterhin als wesentliche Planungsgrundlage. Zwar veröffentlichte der Bund 2019 einen aktualisierten Windatlas mit verbesserter Genauigkeit, für den Kanton Aargau gelten die kantonalen Messungen und die darauf abgestützte Karte aber als belastbarer. Für die Beurteilung eines Standorts ist vor allem die mittlere zu erwartende Windgeschwindigkeit entscheidend, da die Windleistung mit der dritten Potenz der Windgeschwindigkeit zunimmt. Sie ist damit einer der wichtigsten Faktoren für den erwartbaren Jahresertrag einer Anlage.""",
+Nebst den Standortanforderungen wie Windpotenzial, Untergrund und Erschliessungsvoraussetzungen sind insbesondere die Interessen von Natur, Landschaft, Wald und Siedlung angemessen zu berÃ¼cksichtigen. Die rÃ¤umlichen Auswirkungen umfassen vor allem LÃ¤rmimmissionen, Schattenwurf, Auswirkungen auf Flora und Fauna sowie die VerÃ¤nderung des grossrÃ¤umig wahrnehmbaren Landschaftsbilds. Durch die fortschreitende technologische Entwicklung sowie die generelle Energiepreisentwicklung ist damit zu rechnen, dass kÃ¼nftig in weiteren Gebieten im Kanton Aargau Windkraftanlagen betrieben werden kÃ¶nnen. Der Kanton ist deshalb gefordert, in den nÃ¤chsten Jahren wenn mÃ¶glich weitere Windenergiegebiete auszuscheiden.""",
+    "source": "Richtplan Aargau, Seite 2",
+    "category": "windenergie_herausforderung"
+  },
+  {
+    "content": """Stand / Ãœbersicht
+
+Den bisherigen Untersuchungen entsprechend sind im kantonalen Richtplan fÃ¼nf Gebiete bezeichnet, die zur vertieften ÃœberprÃ¼fung der Eignung infrage kommen. Deren Produktionspotenzial wird auf jÃ¤hrlich rund 50 GWh geschÃ¤tzt. Die Bezeichnung weiterer Gebiete setzt entsprechend positive Planungsresultate sowie rÃ¤umlich abgestimmte VorschlÃ¤ge voraus. Bis zum Jahr 2023 wurde im Kanton Aargau noch keine grÃ¶ssere Windenergieanlage realisiert.
+
+Als wichtigste Planungsgrundlage zur Evaluation geeigneter Gebiete wurde mittels eines Computermodells der StrÃ¶mungsmechanik eine Windpotenzialkarte des Kantons Aargau erstellt. Die Windpotenzialkarte hat nach wie vor GÃ¼ltigkeit und die ermittelten Werte stellen rechnerische AnnÃ¤herungen an die realen Ã¶rtlichen VerhÃ¤ltnisse dar. Der Bund verÃ¶ffentlichte 2019 einen aktualisierten Windatlas fÃ¼r die Schweiz. FÃ¼r den Kanton Aargau ist die bereits auf Kantonsgebiet durchgefÃ¼hrte Datengrundlage jedoch belastbarer als die Top-Down-Analyse des Bundes.""",
     "source": "Richtplan Aargau, Seite 3",
     "category": "windenergie_planungsgrundlagen"
   },
   {
-    "content": """Zusammenfassung
+    "content": """Stand / Ãœbersicht
 
-Für grosse Windkraftanlagen ist im Kanton Aargau eine gebietsbezogene und koordinierte Planung vorgeschrieben. Solche Anlagen benötigen eine Spezialzone in der kommunalen Nutzungsplanung oder einen kantonalen Nutzungsplan. Im Interesse der landschaftlichen Eingliederung und einer effizienten Nutzung geeigneter Räume sollen pro Gebiet in der Regel mindestens drei gleichartige Anlagen gemeinsam geplant und gleichzeitig realisiert werden. Dabei werden auch angrenzende ausserkantonale Anlagenteile eines Gebiets mitberücksichtigt.
+Wesentlich fÃ¼r die Beurteilung eines Anlagenstandorts ist die mittlere zu erwartende Windgeschwindigkeit, da die Windleistung mit der dritten Potenz der Windgeschwindigkeit zunimmt. Die Windgeschwindigkeit ist somit einer der bestimmenden Faktoren fÃ¼r den zu erwartenden Jahresertrag an elektrischer Energie einer Anlage.
 
-Im Richtplan sind fünf Gebiete für eine vertiefte Prüfung genannt: Burg in Oberhof, Lindenberg in Beinwil (Freiamt), Uf em Chalt in Attelwil / Reitnau, Staffelbach und Wiliberg, Hundsrugge in Zeiningen sowie Hochrüti in Kirchleerau und Schmiedrued. Diese Gebiete haben unterschiedlichen Planungsstand, von Festsetzung bis Zwischenergebnis. Die Bewilligung grosser Anlagen erfolgt auf Grundlage eines kommunalen oder kantonalen Nutzungsplans, der das gesamte Gebiet umfasst und regional abgestimmt ist. Damit soll sichergestellt werden, dass Windenergie nicht punktuell und unkoordiniert, sondern als zusammenhängende räumliche Entwicklung verfolgt wird.""",
-    "source": "Richtplan Aargau, Seiten 3–4",
+Grosse Windkraftanlagen erfordern eine Spezialzone in der kommunalen Nutzungsplanung oder einen kantonalen Nutzungsplan. Im Interesse der landschaftlichen Eingliederung und der effizienten Nutzung geeigneter Gebiete sind in der Regel pro Gebiet jeweils mindestens drei Anlagen gleichzeitig zu planen und zu realisieren. Anlagen in angrenzenden ausserkantonalen Teilen des jeweiligen Gebiets werden mitberÃ¼cksichtigt. Damit wird sichergestellt, dass das Potenzial eines Gebiets als Ganzes gleichzeitig erschlossen und genutzt wird und dass gleichartige Anlagen erstellt und betrieben werden.""",
+    "source": "Richtplan Aargau, Seite 3",
+    "category": "windenergie_standortbeurteilung_grossanlagen"
+  },
+  {
+    "content": """Stand / Ãœbersicht
+
+Kleine Windkraftanlagen erfordern eine Regelung in der kommunalen Nutzungsplanung. Sie sind in Industrie- und Gewerbezonen zonenkonform. Kleinwindanlagen haben in der Regel einen tiefen Wirkungsgrad und eine geringe Produktion. Die spezifischen Zonenvorschriften, etwa zu GebÃ¤udehÃ¶hen, sind einzuhalten.
+
+Der Standort muss zudem fÃ¼r eine Windkraftanlage geeignet sein. Der rechnerische Nachweis des Windpotenzials gemÃ¤ss Beschluss 2.3 muss, ausgehend von der Windpotenzialkarte Aargau, erbracht werden.""",
+    "source": "Richtplan Aargau, Seite 3",
+    "category": "windenergie_kleinanlagen_grundsatz"
+  },
+  {
+    "content": """BeschlÃ¼sse â€“ PlanungsgrundsÃ¤tze
+
+A. Windkraftanlagen sollen in Gebieten, die Ã¼ber gute WindverhÃ¤ltnisse verfÃ¼gen und denen keine anderen Ã¼berwiegenden rÃ¤umlichen Interessen entgegenstehen, konzentriert werden. Vorrang haben Gebiete fÃ¼r grosse Windkraftanlagen fÃ¼r die kommerzielle Stromproduktion mit gutem Energieertrag.
+
+B. Die PrÃ¼fung und Ausscheidung weiterer Gebiete fÃ¼r grosse Windkraftanlagen im Richtplan gemÃ¤ss den Zielsetzungen der Energiegesetzgebung und des Windenergiekonzepts des Bundes erfolgt entsprechend der technischen und wirtschaftlichen Entwicklung und in Abstimmung mit den betroffenen rÃ¤umlichen Interessen.""",
+    "source": "Richtplan Aargau, Seite 4",
+    "category": "windenergie_planungsgrundsaetze"
+  },
+  {
+    "content": """BeschlÃ¼sse â€“ Grosse Windkraftanlagen (mehr als 30 m GesamthÃ¶he)
+
+Die folgenden Gebiete kommen zur vertieften ÃœberprÃ¼fung der Eignung infrage: Burg in der Gemeinde Oberhof, in Verbindung mit dem Anteil im Kanton Solothurn; Lindenberg in der Gemeinde Beinwil (Freiamt), in Verbindung mit dem Anteil im Kanton Luzern; Uf em Chalt in den Gemeinden Attelwil / Reitnau, Staffelbach und Wiliberg; Hundsrugge in der Gemeinde Zeiningen; sowie HochrÃ¼ti in den Gemeinden Kirchleerau und Schmiedrued.
+
+Die Bewilligung grosser Windkraftanlagen erfolgt auf der Grundlage eines kommunalen oder kantonalen Nutzungsplans, der das gesamte Gebiet umfasst und regional abgestimmt ist.""",
+    "source": "Richtplan Aargau, Seiten 4â€“5",
     "category": "windenergie_grossanlagen_gebiete"
   },
   {
-    "content": """Zusammenfassung
+    "content": """BeschlÃ¼sse â€“ Grosse Windkraftanlagen (mehr als 30 m GesamthÃ¶he)
 
-Bei grossen Windkraftanlagen muss im Rahmen des kommunalen oder kantonalen Nutzungsplans eine vertiefte Eignungsprüfung und umfassende Interessenabwägung erfolgen. Dabei ist insbesondere nachzuweisen, dass im betreffenden Gebiet – unter Einbezug ausserkantonaler Gebietsteile – in der Regel mindestens drei gleichartige Anlagen erstellt werden können. Zudem muss die Stromproduktion mindestens 450 kWh pro Quadratmeter und Jahr betragen. Diese Anforderungen sollen sicherstellen, dass nur energetisch und räumlich überzeugende Standorte weiterverfolgt werden.
+Im Rahmen des kommunalen oder kantonalen Nutzungsplans hat die vertiefte ÃœberprÃ¼fung der Eignung fÃ¼r die Anlagenstandorte und eine umfassende InteressenabwÃ¤gung zu erfolgen. Es ist aufzuzeigen, dass im betreffenden Gebiet â€“ unter Einbezug der Anlagen in ausserkantonalen Gebietsteilen â€“ in der Regel mindestens drei gleichartige Windkraftanlagen erstellt werden kÃ¶nnen. Diese Anlagen sind gemeinsam zu planen und gleichzeitig zu realisieren. Die Stromproduktion ist auszuweisen und muss mindestens 450 kWh pro Quadratmeter und Jahr betragen.
 
-Zusätzlich gelten klare Ausschluss- und Schutzkriterien. Anlagenstandorte müssen ausserhalb nationaler und kantonaler Naturschutzgebiete, Moorbiotope, Moorlandschaften, Trockenwiesen gemäss Bundesinventaren sowie ausserhalb der Grundwasserschutzzonen 1 und 2 liegen. Der Abstand zu Wohn-, Misch- und Weilerzonen muss mindestens 300 Meter betragen. Nachteilige Auswirkungen auf Wildtierkorridore sind zu vermeiden, insbesondere durch angemessene Abstände. Auch die Erschliessung ist geregelt: Sie hat in der Regel über das bestehende Strassen- und Wegenetz zu erfolgen. Insgesamt verbinden die Vorgaben Energieertrag, Natur- und Siedlungsschutz sowie eine möglichst schonende infrastrukturelle Einbindung.""",
+Die Anlagenstandorte liegen ausserhalb von Naturschutzgebieten von nationaler oder kantonaler Bedeutung, ausserhalb von Moorbiotopen und Moorlandschaften sowie Trockenwiesen gemÃ¤ss Bundesinventaren und ausserhalb von Grundwasserschutzzonen 1 und 2. Der Abstand zu Wohn-, Misch- und Weilerzonen betrÃ¤gt mindestens 300 m. Nachteilige Auswirkungen auf Wildtierkorridore werden vermieden. Die Erschliessung der Anlagenstandorte hat in der Regel Ã¼ber das bestehende Strassen- und Wegenetz zu erfolgen.""",
     "source": "Richtplan Aargau, Seite 5",
     "category": "windenergie_grossanlagen_kriterien"
   },
   {
-    "content": """Zusammenfassung
+    "content": """BeschlÃ¼sse â€“ Kleine Windkraftanlagen (weniger als 30 m GesamthÃ¶he)
 
-Kleine Windkraftanlagen mit einer Gesamthöhe von weniger als 30 Metern werden im Kanton Aargau anders behandelt als grosse Anlagen. Innerhalb der Bauzonen sind sie für Testzwecke und zur Eigenversorgung in Industrie- und Gewerbezonen zulässig, soweit die kommunale Nutzungsplanung dies vorsieht. Ausserhalb der Bauzonen sind kleine Anlagen nur mit Bezug zu bestehenden Bauten möglich, wenn sie standortgebunden sind und keine überwiegenden öffentlichen Interessen entgegenstehen.
+Innerhalb der Bauzonen sind kleine Windkraftanlagen fÃ¼r Testzwecke und fÃ¼r die Eigenversorgung bis 30 m GesamthÃ¶he in Industrie- und Gewerbezonen nach Massgabe der kommunalen Nutzungsplanung mÃ¶glich. Sie mÃ¼ssen die Grundanforderungen gemÃ¤ss Beschluss 2.3 erfÃ¼llen. Ausserhalb der Bauzonen sind kleine Windkraftanlagen fÃ¼r die Eigenversorgung bis 30 m GesamthÃ¶he mit Bezug zu bestehenden Bauten mÃ¶glich, soweit sie standortgebunden sind, die Grundanforderungen gemÃ¤ss Beschluss 2.3 erfÃ¼llen und keine Ã¼berwiegenden Ã¶ffentlichen Interessen entgegenstehen.
 
-Für kleine Windkraftanlagen gelten zudem technische Mindestanforderungen an den Standort. Auf Nabenhöhe muss ein mittleres jährliches Windpotenzial von mindestens 3 m/s nachgewiesen werden. Dieser Nachweis kann rechnerisch auf Basis der Windpotenzialkarte Aargau oder durch eine Messung auf Nabenhöhe mit einem qualifizierten Messgerät über mindestens sechs Monate erbracht werden. Aus den Messresultaten ist ein aussagekräftiger mittlerer Jahreswert abzuleiten. Die jährliche Produktionszeit soll in der Regel rund ein Drittel der Jahresstunden betragen. Damit wird sichergestellt, dass auch kleinere Anlagen nur dort errichtet werden, wo ein plausibler und technisch sinnvoller Betrieb möglich ist.""",
-    "source": "Richtplan Aargau, Seiten 3–5",
+Kleine Windkraftanlagen sind an Standorten zulÃ¤ssig, die auf NabenhÃ¶he ein mittleres jÃ¤hrliches Windpotenzial von minimal 3 m/s aufweisen. Der Nachweis kann rechnerisch, ausgehend von der Windpotenzialkarte Aargau, oder durch eine Messung auf NabenhÃ¶he mittels eines qualifizierten MessgerÃ¤ts wÃ¤hrend mindestens 6 Monaten erbracht werden. Die jÃ¤hrliche Produktionszeit soll in der Regel rund ein Drittel der Jahresstunden betragen.""",
+    "source": "Richtplan Aargau, Seite 5",
     "category": "windenergie_kleinanlagen"
   }
 ]
