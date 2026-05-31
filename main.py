@@ -10,7 +10,7 @@ from openai import OpenAI
 
 from bm25_search import improved_search
 
-MODEL = "gpt-5.4"
+MODEL = "gpt-4o"
 HISTORY_LENGTH = 5
 CONTEXT_LEN = 5
 MIN_TIME_BETWEEN_REQUESTS = datetime.timedelta(seconds=1)
@@ -219,7 +219,7 @@ def call_openai(prompt: str) -> str:
     resp = client.chat.completions.create(
         model=MODEL,
         messages=[{"role": "user", "content": prompt}],
-        max_completion_tokens=400,
+        max_tokens=400,
         temperature=0.1,
     )
     return resp.choices[0].message.content
