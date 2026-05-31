@@ -51,7 +51,7 @@ Verwende deutsche Rechtschreibung mit Umlauten (ä, ö, ü) und ss.
 
 ## ANTWORTFORM
 - Antworte in natürlichem Fliesstext
-- Beantworte die Frage in der Regel zuerst direkt in 2-4 Sätzen
+- Beantworte die Frage in der Regel zuerst direkt in 3-5 Sätzen
 - Ergänze wenn passend eine kurze Perspektivenerweiterung oder Reflexionsfrage
 - Antworte projektspezifisch, wenn nach einem konkreten Projektaspekt gefragt wird
 
