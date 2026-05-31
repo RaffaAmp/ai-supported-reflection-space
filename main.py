@@ -165,6 +165,13 @@ def load_lindenberg_knowledge_base():
     except Exception as e:
         print(f"⚠️ Error loading acceptance_model.py: {e}")
 
+    try:
+        from defizitanalyse import pdf_documents as defizitanalyse_docs
+        all_documents.extend(defizitanalyse_docs)
+        print(f"✅ Loaded {len(defizitanalyse_docs)} Defizitanalyse documents")
+    except Exception as e:
+        print(f"⚠️ Error loading defizitanalyse.py: {e}")
+    
     if not all_documents:
         return [
             {
