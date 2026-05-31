@@ -10,7 +10,7 @@ from openai import OpenAI
 
 from bm25_search import improved_search
 
-MODEL = "gpt-4o"
+MODEL = "gpt-5.4"
 HISTORY_LENGTH = 5
 CONTEXT_LEN = 5
 MIN_TIME_BETWEEN_REQUESTS = datetime.timedelta(seconds=1)
